@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poké Explorer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <i class="fas fa-pokeball"></i>
+                <span>Poké Explorer</span>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showHome()">Home</a></li>
+                <li><a href="#favorites" onclick="showFavorites()">Favorites</a></li>
+                <li><a href="#" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="home">
+        <h1>Discover Pokémon</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Enter Pokémon name or ID">
+            <button onclick="fetchPokemon()" aria-label="Search"><i class="fas fa-search"></i></button>
+            <button onclick="fetchRandomPokemon()" aria-label="Random Pokémon"><i class="fas fa-random"></i></button>
+        </div>
+    </header>
+
+    <main id="main-section">
+        <div id="pokemon-info" class="pokemon-grid"></div>
+    </main>
+
+    <section id="favorites-page" style="display: none;">
+        <h2>Your Favorite Pokémon</h2>
+        <div id="favorites-list" class="pokemon-grid"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Poké Explorer | Powered by PokéAPI | Made with ❤️ by <a href="https://github.com/oxyzox">oxyzox</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
